@@ -1,0 +1,39 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    video-list-service:
+        path: /list/**
+        serviceId: video-list-service
+        stripPrefix: false
+        sensitiveHeaders:
+
+    video-detail-service:
+        path: /detail/**
+        serviceId: video-detail-service
+        stripPrefix: false
+        sensitiveHeaders:
+        
+    video-data-service:
+        path: /data/**
+        serviceId: video-data-service
+        stripPrefix: false
+        sensitiveHeaders:
+
+server:
+  port: 4000

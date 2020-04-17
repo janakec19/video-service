@@ -1,0 +1,11 @@
+server:
+  servlet:
+    context-path: /detail
+  port: 8000
+
+feign:
+  hystrix:
+    enabled: true
+    
+
+

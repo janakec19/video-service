@@ -1,0 +1,9 @@
+server:
+  servlet:
+    context-path: /list
+  port: 7000
+
+feign:
+  hystrix:
+    enabled: true
+    
